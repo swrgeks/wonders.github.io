@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gone or Going: Extinct & Endangered Species</title>
+<style>
+:root{--bg:#f6f1e7;--fg:#0b2b30;--card:#fffaf0;--mut:#4d6468;--line:#d9cfba;--sea:#0f6d73;--sun:#f2b705;--rd:#d63f2f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061d21;--fg:#eef3ee;--card:#0d3036;--mut:#9bb5b6;--line:#1c4a50;--sea:#47c1c8}}
+:root[data-theme="dark"]{--bg:#061d21;--fg:#eef3ee;--card:#0d3036;--mut:#9bb5b6;--line:#1c4a50;--sea:#47c1c8}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0}
+.hero{position:relative;overflow:hidden;padding:64px 20px 120px;background:linear-gradient(180deg,#05373d,#0f6d73);color:#f4f0e4;text-align:center}
+.hero h1{font-size:clamp(2.2rem,7vw,4.4rem);max-width:15ch;margin:0 auto 14px;animation:rise 1s both}
+.hero p{max-width:60ch;margin:0 auto;opacity:.92;animation:rise 1s .25s both}
+.sun{position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#f2b705 30%,transparent 70%);opacity:.55;animation:pulse 6s ease-in-out infinite}
+.wave{position:absolute;left:0;bottom:-2px;width:200%;height:90px;animation:slide 14s linear infinite}
+.wave.b{height:70px;opacity:.6;animation-duration:22s;animation-direction:reverse}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px;animation:rise 1s .5s both}
+.stats b{display:block;font:700 1.9rem Georgia,serif;color:var(--sun)}.stats span{display:block;padding:8px 14px;border:1px solid #ffffff44;border-radius:12px;font-size:.8rem}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}@keyframes slide{to{transform:translateX(-50%)}}@keyframes pulse{50%{transform:scale(1.15)}}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;gap:6px;justify-content:center;padding:10px;background:var(--bg);border-bottom:1px solid var(--line)}
+nav a{color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;font-weight:600}nav a:hover{background:var(--line)}
+main{max-width:1100px;margin:0 auto;padding:0 16px}section{padding:40px 0}
+h2{font-size:2rem;margin-bottom:6px}.sub{color:var(--mut);margin:0 0 18px;max-width:70ch}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}.lab{font-weight:700;font-size:.85rem;color:var(--mut);margin-top:10px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:6px 13px;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer;transition:.2s}
+.chip.on{background:var(--sea);color:#fff;border-color:var(--sea)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:16px}
+.card{background:linear-gradient(180deg,color-mix(in srgb,var(--a) 14%,var(--card)),var(--card));border:1px solid var(--line);border-top:6px solid var(--a);border-radius:16px;padding:18px;cursor:pointer;text-align:left;color:var(--fg);font:inherit;transition:transform .25s,box-shadow .25s;animation:rise .6s both}
+.card:hover,.card:focus-visible{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 14px 30px color-mix(in srgb,var(--a) 45%,transparent);outline:2px solid var(--a)}
+.em{font-size:3rem;display:block;transition:transform .4s}.card:hover .em{transform:scale(1.2) rotate(8deg)}
+.card h3{font-size:1.3rem;margin:8px 0 2px}.card i{color:var(--mut);font-size:.9rem}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:.78rem}.tags span{background:var(--line);padding:2px 9px;border-radius:99px}
+.bd{display:inline-block;color:#fff;font-weight:700;font-size:.78rem;padding:3px 10px;border-radius:99px;margin-top:8px}
+.EX{background:#7a4f94}.CR{background:#d63f2f}.EN{background:#d9701a}.VU{background:#9a7600}
+dialog{width:min(760px,94vw);max-height:90vh;border:0;border-radius:20px;background:var(--bg);color:var(--fg);padding:0;animation:pop .35s}
+dialog::backdrop{background:#000a;backdrop-filter:blur(3px)}@keyframes pop{from{opacity:0;transform:scale(.92) translateY(20px)}}
+.dh{position:relative;overflow:hidden;padding:22px 22px 14px;background:linear-gradient(135deg,var(--a,#05373d),var(--b,#0f6d73));color:#f4f0e4}.dh::after{content:attr(data-e);position:absolute;right:12px;bottom:-24px;font-size:7rem;opacity:.22;animation:flt 5s ease-in-out infinite}@keyframes flt{50%{transform:translateY(-14px)}}.dh h2{color:#fff}
+.x{float:right;border:0;background:#ffffff33;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+.db{padding:6px 22px 24px}.db h4{margin:20px 0 6px;font:700 1.05rem Georgia,serif;color:var(--sea)}.db p,.db li{margin:4px 0}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}dt{font-weight:700}dd{margin:0}
+.src a{color:var(--sea);font-weight:600}.k{font-size:.7rem;border:1px solid var(--line);border-radius:6px;padding:0 6px;margin-left:6px;color:var(--mut)}
+.note{background:var(--card);border-left:4px solid var(--sun);padding:10px 14px;border-radius:8px;margin:14px 0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:640px}
+.opt{display:block;width:100%;margin:8px 0;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;text-align:left;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--sea)}.opt.ok{background:#1f9d55;color:#fff}.opt.no{background:var(--rd);color:#fff}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden}.bar div{height:100%;background:var(--sun);transition:width .4s}
+.go{background:var(--sea);color:#fff;border:0;padding:10px 20px;border-radius:99px;font:inherit;font-weight:700;cursor:pointer;margin-top:10px}
+.gm{display:flex;justify-content:center}canvas{width:min(100%,360px);display:block;border-radius:18px;border:1px solid var(--line);touch-action:none;cursor:pointer}.wr{display:flex;gap:6px;margin:6px 0;justify-content:center}.wt{width:42px;height:42px;display:grid;place-items:center;border:2px solid var(--line);border-radius:8px;font:700 1.3rem system-ui}.wt.g{background:#1f9d55;color:#fff;border-color:#1f9d55;animation:fl .5s}.wt.y{background:#d9a400;color:#fff;border-color:#d9a400;animation:fl .5s}.wt.x{background:var(--mut);color:#fff;border-color:var(--mut);animation:fl .5s}@keyframes fl{from{transform:rotateX(90deg)}}.wf{display:flex;gap:8px;justify-content:center;margin-top:12px}.wf input{font:inherit;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--fg);text-transform:uppercase;width:180px}#wc,#wm{text-align:center}footer{padding:30px 16px;text-align:center;color:var(--mut);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header class="hero"><div class="sun"></div>
+<h1>Gone or Going: species on the edge</h1>
+<p>Ten extinct and threatened species — from Mindoro’s tamaraw to Mauritius’s dodo — with habitats, status, threats, laws and linked sources.</p>
+<div class="stats" id="stats"></div>
+<svg class="wave" viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 40Q150 0 300 40T600 40T900 40T1200 40V90H0Z" fill="#f6f1e7" opacity=".35"/></svg>
+<svg class="wave b" viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 50Q150 10 300 50T600 50T900 50T1200 50V90H0Z" fill="#f6f1e7"/></svg></header>
+<nav><a href="#species">Species</a><a href="#games">Games</a><a href="#wordle">Wordle</a><a href="#guide">Guide</a><a href="#sources">Sources</a></nav>
+<main>
+<section id="species"><h2>Species explorer</h2><p class="sub">Filter by group and habitat, then tap a card for the full profile.</p>
+<div class="lab">Group</div><div class="chips" id="fc"></div><div class="lab">Habitat</div><div class="chips" id="fh"></div><div class="grid" id="grid"></div></section>
+<section id="games"><h2>Games: Species Guardian</h2><p class="sub">Pick a species. Dodge the real threats that endanger it and collect the actions that help it. Reach 200 points to recover the population. Move with ← → or A / D, or drag on the screen.</p><div class="chips" id="gp"></div><div class="gm"><canvas id="cv" width="360" height="500" aria-label="Species Guardian game"></canvas></div><p class="sub">Python fan? <b>gone_or_going.py</b> has a desktop (pygame) version, a species explorer and a JSON export.</p></section>
+<section id="wordle"><h2>Species Wordle</h2><p class="sub">Every answer is a word taken from the species information on this page. Green = right spot, yellow = wrong spot, grey = not in the word. Six tries.</p><p id="wc"></p><div id="wg"></div><div class="wf"><input id="wi" autocomplete="off" autocapitalize="characters" maxlength="9" aria-label="Your guess"><button class="go" id="wb">Guess</button></div><p id="wm"></p></section>
+<section id="guide"><h2>How to read the labels</h2><dl><dt>Extinct (EX)</dt><dd>No reasonable doubt that the last individual has died.</dd><dt>Critically Endangered (CR)</dt><dd>Extremely high risk of extinction in the wild.</dd><dt>Endangered (EN)</dt><dd>Very high risk of extinction in the wild.</dd><dt>Vulnerable (VU)</dt><dd>High risk of extinction in the wild.</dd><dt>IUCN vs DENR</dt><dd>IUCN categories are global. Philippine lists (DAO 2019-09 for animals, DAO 2017-11 for plants) apply under RA 9147 inside the country and do not automatically copy the IUCN list, so the two can differ.</dd></dl></section>
+<section id="sources"><h2>Sources &amp; how this was checked</h2>
+<div class="note">Statuses were cross-checked against the IUCN Red List and Philippine government instruments (RA 9147, DENR Administrative Orders, Fisheries Administrative Orders) as retrieved on 16 Nov 2026. This page is an independent educational project and is <b>not</b> endorsed by any government agency. Counts change every year — always confirm the latest figure at the official source before citing it.</div>
+<ul class="src"><li><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List</a><span class="k">Intl</span> — global categories</li>
+<li><a href="https://bmb.gov.ph" target="_blank" rel="noopener">DENR Biodiversity Management Bureau</a><span class="k">Gov</span> — DAO 2019-09 (fauna), DAO 2017-11 (plants)</li>
+<li><a href="https://lawphil.net/statutes/repacts/ra2001/ra_9147_2001.html" target="_blank" rel="noopener">RA 9147 Wildlife Act</a><span class="k">Gov</span></li>
+<li><a href="https://www.bfar.da.gov.ph" target="_blank" rel="noopener">BFAR</a><span class="k">Gov</span> — fisheries law &amp; Taal Lake</li>
+<li><a href="https://speciesplus.net" target="_blank" rel="noopener">CITES Species+</a><span class="k">Intl</span> — trade listings</li></ul></section>
+</main><footer>Gone or Going · built for learning · data as of November 2026</footer>
+<dialog id="dlg"></dialog>
+<script>
+const L={EX:"Extinct",CR:"Critically Endangered",EN:"Endangered",VU:"Vulnerable"};
+const I="https://www.iucnredlist.org",B="https://bmb.gov.ph",R="https://lawphil.net/statutes/repacts/ra2001/ra_9147_2001.html";
+const S=[
+{n:"Dodo",l:"Raphus cucullatus",c:"Birds",h:"Island forest",s:"EX",e:"🦤",iu:"Extinct (EX)",ph:"Not native to the Philippines; included as the classic case of human-caused extinction.",r:"Mauritius, Mascarene Islands, Indian Ocean (endemic)",
+f:[["Family","Pigeons & doves (Columbidae)"],["Size","About 1 m tall; roughly 10–20 kg (estimates vary)"],["First written record","1598, Dutch sailors"],["Last widely accepted sighting","1662"]],
+w:"A flightless, ground-dwelling relative of pigeons with a heavy hooked bill and tiny wings. It evolved without land predators, so it had little fear of people.",
+b:"Lived in the dry coastal woodlands of Mauritius and fed on fallen fruit and seeds.",
+t:["Hunting by sailors and settlers","Introduced pigs, rats, macaques and deer eating eggs and chicks","Forest clearing"],
+a:"Nothing can restore it, but it is a core lesson for island conservation: removing invasive predators is one of the most effective ways to save island birds today.",
+d:"It vanished within roughly a century of the first human records.",
+z:[["Classification","Order Columbiformes, family Columbidae: its closest living relatives are pigeons"],["Timeline","1598 first Dutch records; 1662 last widely accepted sighting"],["Role","A large ground-feeding eater of fruit and seeds in Mauritius’s forests"],["Lesson","Island species that evolved without predators are very vulnerable to introduced animals"]],
+q:"I was a flightless bird of Mauritius, last widely seen in 1662.",
+x:[["IUCN Red List",I,"Intl"],["Natural History Museum, UK","https://www.nhm.ac.uk","Sci"]]},
+{n:"Philippine Rhinoceros",l:"Rhinoceros philippinensis",c:"Mammals",h:"Lowland plains",s:"EX",e:"🦏",iu:"Extinct (prehistoric); not assessed on the Red List",ph:"Fossil species — studied by Philippine and international researchers.",r:"Rizal, Kalinga, Cagayan Valley, northern Luzon (fossil site)",
+f:[["Age of the key fossil","≈709,000 years ago (Middle Pleistocene)"],["Published","Nature, 2018 (Ingicco et al.)"],["Evidence","A mostly complete skeleton with stone-tool cut marks and percussion marks"]],
+w:"A prehistoric rhinoceros known from fossils in the Cagayan Valley. In 2018 researchers reported butchery marks on its bones, pushing the earliest evidence of hominin activity in the Philippines back to about 709,000 years ago.",
+b:"The toolmaker was an unidentified hominin species — not modern humans.",
+t:["Why it disappeared is unresolved; no single cause has been established"],
+a:"Fossils are studied by Philippine institutions, including the National Museum of the Philippines, with international partners.",
+d:"The find showed that early hominins reached the Philippine islands far earlier than once thought.",
+z:[["Classification","Genus Rhinoceros, the group that includes the living Javan and Indian rhinos"],["Timeline","≈709,000 years ago: butchered; 2018: findings published in Nature"],["Why it matters","Luzon was always cut off by sea, so early hominins must have crossed water to reach it"],["Open question","Which hominin species made the tool marks is still unknown"]],
+q:"Cut marks on my 709,000-year-old bones were found in Kalinga.",
+x:[["Nature 2018 paper","https://doi.org/10.1038/s41586-018-0072-8","Sci"],["National Museum of the Philippines","https://www.nationalmuseum.gov.ph","Gov"]]},
+{n:"Philippine Eagle",l:"Pithecophaga jefferyi · Haribon",c:"Birds",h:"Rainforest",s:"CR",e:"🦅",iu:"Critically Endangered (CR)",ph:"National bird (Proclamation No. 615, 1995). Protected under RA 9147.",r:"Luzon, Samar, Leyte and Mindanao (endemic)",
+f:[["Height","≈ 1 m"],["Wingspan","≈ 2 m"],["Weight","About 4.7–8 kg"],["Breeding","One egg, usually every two years"],["Population","≈180–500 mature individuals, decreasing (IUCN/BirdLife)"]],
+w:"One of the largest and most powerful eagles on Earth, with a shaggy crest and deep bill. Once called the monkey-eating eagle, it also hunts colugos, civets, bats, birds and reptiles.",
+b:"Monogamous pairs defend large forest territories and nest high in emergent trees. Slow breeding makes recovery very slow.",
+t:["Deforestation and forest fragmentation","Hunting and trapping","Very low reproductive rate"],
+a:"RA 9147 sets up to 12 years’ imprisonment and fines up to ₱1 million for killing a critically endangered species. The Philippine Eagle Foundation runs captive breeding, nest protection and release with DENR.",
+d:"Proclamation No. 615 also renamed it from “monkey-eating eagle” to Philippine eagle.",
+z:[["Classification","Family Accipitridae; the only species in genus Pithecophaga"],["Local name","Haribon, from hari ng ibon (king of birds)"],["Role","Apex predator of Philippine rainforests"],["Needs","Large intact forest with tall emergent trees for nesting"]],
+q:"I’m the national bird, with a 2 m wingspan and a shaggy crest.",
+x:[["IUCN Red List",I,"Intl"],["RA 9147 Wildlife Act",R,"Gov"],["DENR-BMB",B,"Gov"],["Philippine Eagle Foundation","https://www.philippineeagle.org","NGO"]]},
+{n:"Tamaraw",l:"Bubalus mindorensis",c:"Mammals",h:"Grassland & forest",s:"CR",e:"🐃",iu:"Critically Endangered (CR)",ph:"Protected under RA 9147; managed by the DENR Tamaraw Conservation Program.",r:"Mindoro island only; stronghold is Mts. Iglit-Baco Natural Park",
+f:[["Height","≈ 1 m at the shoulder"],["Weight","Up to ≈300 kg"],["Horns","Short, V-shaped"],["DENR counts","154 (2000) → 523 (2018 park count) → 574–610 island-wide estimate (May 2024)"],["Independent estimate","≈260 ± 60 in Iglit-Baco (double-observer method, D’Aboville Foundation)"]],
+w:"The world’s rarest buffalo, a stocky dwarf wild ox found nowhere else on Earth. It is mostly solitary and rests in forest by day and grazes grasslands at dusk.",
+b:"Numbers once reached ≈10,000 in the early 1900s; rinderpest in the 1930s, hunting and habitat loss collapsed the population.",
+t:["Habitat loss and conversion","Poaching and snares","Disease (rinderpest history)","Grassland burning linked to counts and land use"],
+a:"Annual DENR counts, Bantay Tamaraw rangers, and a 2024–2029 project moving toward dung-based monitoring (endorsed by DENR in Nov 2024). Official and independent figures differ — treat all as estimates.",
+d:"Its horns form a “V” unlike the curved horns of the domestic carabao.",
+z:[["Classification","Genus Bubalus (wild water buffalo group); endemic to Mindoro"],["Timeline","First documented 1888; ≈10,000 in the early 1900s; 154 in 2000"],["Protected area","Mts. Iglit-Baco began as a game refuge and bird sanctuary (Proclamation No. 557, 1969)"],["Why numbers differ","Official counts use many vantage points; independent double-observer surveys give lower estimates"]],
+q:"I’m a V-horned dwarf buffalo found only on Mindoro.",
+x:[["Inquirer — DENR 2024 estimate","https://plus.inquirer.net/motoring/protecting-the-protectors/","News"],["Darwin Initiative project","https://cdn.darwininitiative.org.uk/news/2025/10/13/shared-knowledge-stronger-conservation/","Intl"],["DENR-BMB",B,"Gov"],["IUCN Red List",I,"Intl"]]},
+{n:"Philippine Crocodile",l:"Crocodylus mindorensis · Buwaya, Bukarot",c:"Reptiles",h:"Freshwater",s:"CR",e:"🐊",iu:"Critically Endangered, A2cd (assessed 2012)",ph:"Protected under RA 9147.",r:"Northern Sierra Madre (Isabela, Luzon), southwest Mindanao, Dalupiri Island",
+f:[["Adult length","Typically up to ≈2.5–3 m"],["Maturity","Females ≈10 yrs; males ≈15 yrs"],["Wild adults","Estimated 92–137 (IUCN); some surveys say fewer than 100"],["Range loss","Once nationwide; now in a few fragmented sites"]],
+w:"A small, shy freshwater crocodile found only in the Philippines — often called the rarest crocodile in the world. Unlike the saltwater crocodile, it is not considered a man-eater.",
+b:"Lives in rivers, ponds and marshes; the female guards a nest mound. Eggs are also eaten by invasive fire ants.",
+t:["Dynamite and net fishing","Habitat conversion to farms and ponds","Killing out of fear","Egg collection"],
+a:"Community-based nest protection by the Mabuwaya Foundation in San Mariano, captive breeding and release programs, and legal protection under RA 9147.",
+d:"Until 1989 it was classed as a subspecies of the New Guinea crocodile.",
+z:[["Classification","Genus Crocodylus; treated as a New Guinea crocodile subspecies until 1989"],["Not to confuse with","The larger saltwater crocodile (C. porosus), the other Philippine species"],["Role","Top predator that keeps fish populations balanced"],["Green Status","IUCN: Critically Depleted (2021)"]],
+q:"I’m a small freshwater crocodile; fewer than ~140 adults remain.",
+x:[["IUCN Red List",I,"Intl"],["Britannica","https://www.britannica.com/animal/Philippine-crocodile","Ref"],["Mabuwaya Foundation","https://speciesonthebrink.org/news/partner-interviews/mabuwaya-foundation-working-with-local-communities-to-save-philippine-crocodiles/","NGO"],["RA 9147",R,"Gov"]]},
+{n:"Hawksbill Sea Turtle",l:"Eretmochelys imbricata · Pawikan, Karahan",c:"Marine life",h:"Coral reef",s:"CR",e:"🐢",iu:"Critically Endangered (assessed 2008)",ph:"Protected under RA 9147; CITES Appendix I.",r:"Tropical seas worldwide; Philippine reefs and nesting beaches such as the Turtle Islands (Tawi-Tawi) and Tubbataha",
+f:[["Shell length","Up to ≈ 90 cm"],["Weight","Typically 45–70 kg"],["Diet","Mostly sponges"],["Eggs","100+ per clutch, buried on sandy beaches"],["Global trend","Declines of 80%+ over three generations (IUCN 2008)"]],
+w:"A reef-dwelling sea turtle with a narrow, pointed beak and overlapping, patterned shell plates. Its beak reaches into crevices to eat sponges.",
+b:"By grazing sponges it helps corals compete for space. Females return to nest on beaches near where they hatched.",
+t:["Tortoiseshell (“bekko”) trade","Egg harvesting","Fishing bycatch","Coral reef decline and beach loss","Plastic pollution"],
+a:"International trade is banned under CITES Appendix I; nest protection and hatcheries operate across the Philippines; protected under RA 9147.",
+d:"Sea turtles take decades to mature, so even small losses hurt long-term recovery.",
+z:[["Classification","Family Cheloniidae; the only species in genus Eretmochelys"],["Shell","Overlapping plates, the source of the tortoiseshell trade"],["Role","Grazing sponges keeps reef communities balanced"],["Travel","Migrates long distances between feeding reefs and nesting beaches"]],
+q:"My pointed beak helps me eat sponges on coral reefs.",
+x:[["IUCN Red List",I,"Intl"],["CITES Species+","https://speciesplus.net","Intl"],["RA 9147",R,"Gov"]]},
+{n:"Tawilis",l:"Sardinella tawilis · “Tawilid”",c:"Fish",h:"Freshwater",s:"EN",e:"🐟",iu:"Endangered (assessed Feb 2017; announced Jan 2019)",ph:"DENR CALABARZON and the Taal Volcano Protected Landscape board committed to monitoring; BFAR to assess stocks.",r:"Taal Lake, Batangas, Luzon only",
+f:[["Size","Up to ≈15 cm, under 30 g"],["Fame","The only freshwater member of the sardine genus"],["Catch trend","Fell ≈49% over ten years (IUCN)"],["Spawning","Mostly April–July"]],
+w:"A small silvery sardine that lives only in Taal Lake. Scientists believe its ancestors were marine fish trapped when the caldera lake sealed off from the sea.",
+b:"Schools feed near the surface on zooplankton. Reproduction dropped after the 2020 Taal eruption.",
+t:["Overfishing","Illegal push nets and ring nets","Fish cages","Introduced tilapia and bangus","Water-quality decline"],
+a:"BFAR stock assessments and planned reserve areas, plus lake-quality monitoring. It is also listed on Slow Food’s Ark of Taste.",
+d:"Filipinos know it as a classic Batangas delicacy.",
+z:[["Classification","Family Dorosomatidae; described by Herre in 1927"],["Origin","Probably descended from marine fish trapped when the lake sealed off from the sea"],["Home","Taal Lake fills the caldera of Taal Volcano in Batangas"],["Culture","Listed on Slow Food’s Ark of Taste"]],
+q:"I’m the world’s only freshwater sardine, living in Taal Lake.",
+x:[["GMA News on IUCN listing","https://www.gmanetwork.com/news/news/regions/682559/tawilis-marked-as-endangered-iucn/story/","News"],["BFAR","https://www.bfar.da.gov.ph","Gov"],["IUCN Red List",I,"Intl"]]},
+{n:"Giant Clam",l:"Tridacna gigas · Taklobo",c:"Marine life",h:"Coral reef",s:"VU",e:"🦪",iu:"Vulnerable (IUCN; scientists say the assessment is outdated)",ph:"All giant clams are protected under RA 8550 and Fisheries Administrative Orders 168 (1990) and 208 (2001): gathering and selling are banned.",r:"Shallow Indo-Pacific reefs; Philippine sites include Tubbataha and Palawan",
+f:[["Size","Over 120 cm and 250+ kg"],["Rank","The largest living bivalve"],["Trade","CITES Appendix II since 1985"],["Philippine species","8 of the world’s 12 giant clam species"]],
+w:"A huge reef clam whose wavy mantle glows with symbiotic algae. It gets much of its energy from sunlight, like a coral.",
+b:"Adults cannot move; they spawn in clouds of eggs and sperm. The UP Marine Science Institute has restocked clams since the 1970s.",
+t:["Overharvesting for meat and shells","Illegal shell trade (Palawan seizures)","Coral bleaching and reef damage"],
+a:"National harvest bans, marine protected areas and community clam nurseries like Samal Island.",
+d:"Its Filipino name is taklobo.",
+z:[["Classification","Family Cardiidae, subfamily Tridacninae"],["Energy","Symbiotic algae in the mantle make food from sunlight"],["Law","RA 8550 and Fisheries Administrative Orders 168 (1990) and 208 (2001)"],["Trade alert","TRAFFIC found the Philippines accounts for over 99% of Southeast Asian giant clam shell seizures"]],
+q:"I’m the largest bivalve alive; my local name is taklobo.",
+x:[["CITES Species+","https://speciesplus.net","Intl"],["SciELO — Palawan study","https://scielo.br/j/ocr/a/ShRWHZSQdvvk7WFpX5bLywt/?lang=en","Sci"],["Mongabay — Samal nursery","https://news.mongabay.com/2019/07/a-philippine-community-that-once-ate-giant-clams-now-works-to-protect-them","News"],["BFAR","https://www.bfar.da.gov.ph","Gov"]]},
+{n:"Narra",l:"Pterocarpus indicus",c:"Trees",h:"Lowland forest",s:"EN",e:"🌳",iu:"Endangered (IUCN, 2018)",ph:"DENR DAO 2017-11: Vulnerable. National tree (Proclamation No. 652, 1934).",r:"Southeast Asia, Papua New Guinea; widespread across the Philippines",
+f:[["Height","30–40 m; trunk up to 2 m wide"],["Family","Fabaceae (legumes)"],["Wood","Premium timber, “Philippine mahogany”"],["Extinct in","Vietnam (IUCN)"]],
+w:"A large deciduous tree with a spreading crown and red-brown heartwood. Its pinnate leaves and yellow flowers appear in short bursts.",
+b:"Grows in rainforest and along coasts; used for furniture, carving and instruments, and its resin (kino) in traditional medicine.",
+t:["Logging for timber","Habitat loss","Illegal cutting"],
+a:"Planted widely in reforestation and as a street tree; cutting is regulated by DENR permits.",
+d:"IUCN and the DENR classify it differently: global “Endangered”, Philippine “Vulnerable”.",
+z:[["Classification","Family Fabaceae; also called Amboyna wood or Malay padauk"],["Forms","Smooth narra (forma indicus) and prickly narra (forma echinatus)"],["Uses","Timber, resin (kino) and traditional medicine"],["Elsewhere","Provincial tree of Chonburi and Phuket in Thailand"]],
+q:"I’m the Philippines’ national tree, named in a 1934 proclamation.",
+x:[["IUCN Red List",I,"Intl"],["NCCA — national symbols","https://ncca.gov.ph","Gov"],["DENR DAO 2017-11 via BMB",B,"Gov"]]},
+{n:"Molave",l:"Vitex parviflora · Mulawin, Tugas, Sagat",c:"Trees",h:"Lowland forest",s:"EN",e:"🌲",iu:"Least Concern (IUCN, 2020) — an older listing was Vulnerable",ph:"DENR DAO 2017-11: Endangered.",r:"Philippines, Indonesia, Malaysia; limestone and monsoon forests",
+f:[["Height","Usually up to 30 m (rarely 38 m)"],["Family","Lamiaceae"],["Wood","Dense, durable timber"],["Habitat","Well-drained limestone soils, low elevation"]],
+w:"A deciduous timber tree with small blue flowers, long prized for boats, posts and furniture.",
+b:"Overharvesting and forest loss cut its wild stands, though it can regrow in secondary vegetation.",
+t:["Timber extraction","Conversion of lowland forest","Slow regeneration"],
+a:"Used in native-tree restoration programs; legal cutting limits apply.",
+d:"The Philippine and global lists disagree: this is why the status should always be read with its source.",
+z:[["Names","Mulawin (Tagalog), tugas (Visayan), sagat (Ilocano)"],["Etymology","“Molave” comes from Spanish, from the Tagalog mulawin"],["Why lists differ","IUCN reassessed it as Least Concern, while DENR’s DAO 2017-11 still lists it Endangered"],["Uses","Furniture, boats, utensils and construction"]],
+q:"My dense timber (mulawin) is prized; the DENR lists me as Endangered.",
+x:[["IUCN Red List (de Kok, 2020)",I,"Intl"],["DENR DAO 2017-11 via BMB",B,"Gov"],["Ateneo arboretum guide","https://cms-training.ateneo.edu/ais/arboretum-101-threatened-native-trees","Ref"]]}
+];
+const TH={"Dodo":{a:"#6b4423",b:"#c99a4a",t:["🐀","🐖","🏹"],h:["🌴","🥚"],hn:"Forest and nests protected"},
+"Philippine Rhinoceros":{a:"#4a3b2c",b:"#b39a70",t:["🌡️","🏹","🌾"],h:["🌿","💧"],hn:"Grassland and water found",m:["Climate shift (debated)","Hunting pressure (debated)","Habitat change (debated)"]},
+"Philippine Eagle":{a:"#0f4a2a",b:"#5aa469",t:["🪓","🎯","🔥"],h:["🌳","🥚"],hn:"Nest tree guarded"},
+"Tamaraw":{a:"#7a5a0e",b:"#dcb04a",t:["🪤","🔥","🪓"],h:["🌾","🛡️"],hn:"Ranger patrol and grassland"},
+"Philippine Crocodile":{a:"#2f4a22",b:"#8d9c3d",t:["💣","🕸️","🚜"],h:["🥚","🌊"],hn:"Nest and wetland protected"},
+"Hawksbill Sea Turtle":{a:"#0a4f6b",b:"#33b8c4",t:["🛍️","🎣","🕸️"],h:["🪸","🥚"],hn:"Reef and nest protected"},
+"Tawilis":{a:"#173f6d",b:"#6fa8d8",t:["🎣","🛢️","🐠"],h:["💧","🛟"],hn:"Clean water and reserve area"},
+"Giant Clam":{a:"#0b4a63",b:"#8059bd",t:["⚓","🌡️","🧨"],h:["🪸","🔬"],hn:"Reef and nursery protected"},
+"Narra":{a:"#6e2a17",b:"#d1743c",t:["🪚","🔥","🚜"],h:["🌱","💧"],hn:"Seedlings planted"},
+"Molave":{a:"#2a3d6b",b:"#6a8f3c",t:["🪚","🚜","🔥"],h:["🌱","💧"],hn:"Native forest restored"}};
+const $=s=>document.querySelector(s);let fc="All",fh="All";
+const uniq=k=>["All",...new Set(S.map(x=>x[k]))];
+function chips(el,k,cur){$(el).innerHTML=uniq(k).map(v=>`<button class="chip ${v===cur?"on":""}" data-v="${v}">${v}</button>`).join("");$(el).onclick=e=>{if(!e.target.dataset.v)return;if(k==="c")fc=e.target.dataset.v;else fh=e.target.dataset.v;draw()}}
+function draw(){chips("#fc","c",fc);chips("#fh","h",fh);
+$("#grid").innerHTML=S.map((x,i)=>({x,i})).filter(o=>(fc==="All"||o.x.c===fc)&&(fh==="All"||o.x.h===fh)).map(({x,i},j)=>`<button class="card" style="--a:${TH[x.n].a};--b:${TH[x.n].b};animation-delay:${j*60}ms" data-i="${i}"><span class="em">${x.e}</span><h3>${x.n}</h3><i>${x.l}</i><div><span class="bd ${x.s}">${L[x.s]}</span></div><div class="tags"><span>${x.c}</span><span>${x.h}</span></div></button>`).join("")||"<p>No species match both filters. Try “All”.</p>"}
+$("#grid").onclick=e=>{const c=e.target.closest(".card");if(c)open(+c.dataset.i)};
+function open(i){const x=S[i];$("#dlg").innerHTML=`<div class="dh" style="--a:${TH[x.n].a};--b:${TH[x.n].b}" data-e="${x.e}"><button class="x" aria-label="Close" onclick="dlg.close()">×</button><span style="font-size:2.6rem">${x.e}</span><h2>${x.n}</h2><i>${x.l}</i></div><div class="db"><h4>Status</h4><dl><dt>IUCN</dt><dd>${x.iu}</dd><dt>Philippines</dt><dd>${x.ph}</dd><dt>Group / habitat</dt><dd>${x.c} · ${x.h}</dd><dt>Range</dt><dd>${x.r}</dd></dl><h4>Key facts</h4><dl>${x.f.map(a=>`<dt>${a[0]}</dt><dd>${a[1]}</dd>`).join("")}</dl><h4>What it is</h4><p>${x.w}</p><h4>Biology &amp; history</h4><p>${x.b}</p><h4>Deep dive</h4><dl>${x.z.map(a=>`<dt>${a[0]}</dt><dd>${a[1]}</dd>`).join("")}</dl><h4>Threats</h4><ul>${x.t.map(t=>`<li>${t}</li>`).join("")}</ul><h4>What is being done</h4><p>${x.a}</p><h4>Did you know?</h4><p>${x.d}</p><h4>Sources</h4><ul class="src">${x.x.map(s=>`<li><a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a><span class="k">${s[2]}</span></li>`).join("")}</ul></div>`;dlg.showModal()}
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+const cnt={};S.forEach(x=>cnt[x.s]=(cnt[x.s]||0)+1);
+$("#stats").innerHTML=Object.keys(L).filter(k=>cnt[k]).map(k=>`<span><b data-n="${cnt[k]}">0</b>${L[k]}</span>`).join("");
+document.querySelectorAll("[data-n]").forEach(b=>{let n=0,t=+b.dataset.n;const id=setInterval(()=>{b.textContent=++n;if(n>=t)clearInterval(id)},250)});
+let cur=0,G=null,raf,K={};
+const cv=$("#cv"),cx=cv.getContext("2d"),T=()=>TH[S[cur].n],pk=a=>a[Math.random()*a.length|0],cl=v=>Math.max(24,Math.min(336,v));
+function chp(){$("#gp").innerHTML=S.map((x,i)=>`<button class="chip ${i===cur?"on":""}" data-i="${i}">${x.e} ${x.n}</button>`).join("")}
+$("#gp").onclick=e=>{const b=e.target.closest(".chip");if(b){cur=+b.dataset.i;chp();cancelAnimationFrame(raf);G=null;paint()}};
+function wrap(s,y){let l="";s.split(" ").forEach(w=>{if((l+w).length>40){cx.fillText(l,180,y);y+=20;l=""}l+=w+" "});cx.fillText(l,180,y)}
+function paint(){const t=T(),x=S[cur],g=cx.createLinearGradient(0,0,0,500);g.addColorStop(0,t.a);g.addColorStop(1,t.b);cx.fillStyle=g;cx.fillRect(0,0,360,500);
+cx.fillStyle="#ffffff22";const k=G?G.tm:0;for(let i=0;i<14;i++){cx.beginPath();cx.arc((i*97)%360,500-((k*25+i*61)%520),6+i%4*3,0,7);cx.fill()}
+cx.textAlign="center";cx.fillStyle="#fff";
+if(!G||G.end){cx.font="64px serif";cx.fillText(x.e,180,150);cx.font="700 24px Georgia";cx.fillText(G?(G.end==1?"Population recovered!":"Population lost"):"Protect the "+x.n,180,200);cx.font="14px system-ui";wrap(G?"In real life: "+x.a:GT[GM()]+": "+INS[GM()],240);cx.font="700 16px system-ui";cx.fillText("Tap the game to "+(G?"play again":"start"),180,470);return}
+cx.font="30px serif";if(GM()=="catch"){G.it.forEach(i=>cx.fillText(i.e,i.x,i.y));cx.fillText(x.e,G.x,470)}else draw2();
+cx.font="700 16px system-ui";cx.textAlign="left";cx.fillText("Score "+G.sc+" / "+(G.m=="mem"?120:G.m=="catch"?200:150),12,26);cx.textAlign="right";cx.fillText("❤".repeat(G.pop),348,26);
+if(G.mt>0){cx.textAlign="center";cx.fillStyle=G.bad?"#ffb4a8":"#c9ffd6";cx.font="14px system-ui";cx.fillText(G.msg,180,60,340)}}
+function go(){G={x:180,tx:180,pop:5,sc:0,hc:0,it:[],tm:0,sp:0,msg:"",mt:0,end:0,l:performance.now()};init2();cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}
+function tick(n){if(!G||G.end)return;if(GM()!="catch")return tick2(n);const d=Math.min((n-G.l)/1e3,.05),t=T();G.l=n;G.tm+=d;G.mt-=d;
+G.tx=cl(G.tx+((K.ArrowRight||K.d)?420*d:0)-((K.ArrowLeft||K.a)?420*d:0));G.x+=(G.tx-G.x)*Math.min(1,d*14);
+if((G.sp-=d)<=0){G.sp=Math.max(.35,.9-G.sc/350);const h=Math.random()<.4;G.it.push({x:20+Math.random()*320,y:-20,h,e:pk(h?t.h:t.t),v:120+G.sc*.8+Math.random()*50,m:h?t.hn:pk(t.m||S[cur].t)})}
+G.it=G.it.filter(i=>{i.y+=i.v*d;if(Math.abs(i.x-G.x)<34&&Math.abs(i.y-460)<34){if(i.h){G.sc+=10;if(++G.hc%4==0&&G.pop<8)G.pop++}else G.pop--;G.bad=!i.h;G.msg=i.m;G.mt=1.6;return false}return i.y<530});
+if(G.pop<=0)G.end=2;else if(G.sc>=200)G.end=1;paint();if(!G.end)raf=requestAnimationFrame(tick)}
+const mv=e=>{if(G&&!G.end){const r=cv.getBoundingClientRect();G.tx=cl((e.clientX-r.left)*360/r.width)}};
+cv.addEventListener("pointermove",mv);cv.addEventListener("pointerdown",e=>{if(!G||G.end)go();else if(GM()=="catch")mv(e);else hit(e)});
+addEventListener("keydown",e=>{K[e.key]=1;if(G&&!G.end&&e.key.startsWith("Arrow"))e.preventDefault()});addEventListener("keyup",e=>K[e.key]=0);
+const MD={Dodo:'mem','Philippine Rhinoceros':'mem','Giant Clam':'mem','Philippine Crocodile':'whack',Tamaraw:'whack',Tawilis:'sort',Narra:'sort',Molave:'sort','Philippine Eagle':'catch','Hawksbill Sea Turtle':'catch'},
+GT={mem:'Memory Match',whack:'Threat Whacker',sort:'Threat or Helps?',catch:'Dodge & Collect'},
+INS={mem:'flip cards and match the pairs. Each mismatch costs population.',whack:'tap threats before they reach the habitat. Never tap the helpers!',sort:'tap THREAT or HELPS before the timer runs out.',catch:'move to collect help and dodge threats.'},GM=()=>MD[S[cur].n];
+const say=(s,b,p)=>{G.msg=s;G.bad=b;G.mt=1.8;G.pop+=p||0},lab=v=>{const t=T(),x=S[cur];return v==x.e?x.l:t.t.includes(v)?(t.m||x.t)[t.t.indexOf(v)]:t.hn};
+function init2(){const m=GM(),t=T(),x=S[cur];G.m=m;G.cd=null;G.lk=0;G.f=[];if(m=='mem'){const e=[...new Set([x.e,...t.t,...t.h])].slice(0,6);G.c=[...e,...e].sort(()=>Math.random()-.5).map(v=>({v,o:0,d:0}));G.pop=6}if(m=='whack')G.h=Array(9).fill(null);if(m=='sort')G.pop=4}
+function draw2(){const m=G.m;cx.textAlign='center';
+if(m=='mem')G.c.forEach((c,i)=>{const X=24+i%4*80,Y=110+(i/4|0)*84;cx.fillStyle=c.d?'#ffffff66':'#00000066';cx.fillRect(X,Y,72,72);if(c.o||c.d){cx.fillStyle='#fff';cx.font='38px serif';cx.fillText(c.v,X+36,Y+50)}});
+if(m=='whack')G.h.forEach((h,i)=>{const X=60+i%3*120,Y=150+(i/3|0)*110;cx.fillStyle='#00000066';cx.beginPath();cx.ellipse(X,Y+22,44,18,0,0,7);cx.fill();if(h){cx.font='44px serif';cx.fillStyle='#fff';cx.fillText(h.e,X,Y+10)}});
+if(m=='sort'&&G.cd){cx.font='80px serif';cx.fillStyle='#fff';cx.fillText(G.cd.e,180,220);cx.font='16px system-ui';cx.fillText(G.cd.m,180,270,320);cx.fillRect(20,300,320*G.cd.ttl/G.cd.max,8);cx.font='700 18px system-ui';[['THREAT',20,'#d63f2f'],['HELPS',190,'#1f9d55']].forEach(b=>{cx.fillStyle=b[2];cx.fillRect(b[1],390,150,56);cx.fillStyle='#fff';cx.fillText(b[0],b[1]+75,425)})}}
+function tick2(n){const d=Math.min((n-G.l)/1e3,.05),m=G.m,t=T(),x=S[cur];G.l=n;G.tm+=d;G.mt-=d;
+if(m=='whack'){if((G.sp-=d)<=0){G.sp=Math.max(.45,.9-G.sc/300);const f=G.h.map((v,i)=>v?-1:i).filter(i=>i>=0);if(f.length){const h=Math.random()<.3;G.h[pk(f)]={h,e:pk(h?t.h:t.t),m:h?t.hn:pk(t.m||x.t),ttl:Math.max(.8,1.6-G.sc/250)}}}G.h.forEach((v,i)=>{if(v&&(v.ttl-=d)<=0){G.h[i]=null;if(!v.h)say('A threat got through: '+v.m,1,-1)}});if(G.sc>=150)G.end=1}
+if(m=='sort'){if(!G.cd){const h=Math.random()<.5,mx=Math.max(1.6,3.2-G.sc/90);G.cd={h,e:pk(h?t.h:t.t),m:h?t.hn:pk(t.m||x.t),ttl:mx,max:mx}}else if((G.cd.ttl-=d)<=0){say('Too slow!',1,-1);G.cd=null}}
+if(m=='mem'&&G.lk>0&&(G.lk-=d)<=0){G.f.forEach(i=>G.c[i].o=0);G.f=[]}
+if(G.pop<=0)G.end=2;paint();if(!G.end)raf=requestAnimationFrame(tick2)}
+function hit(e){if(!G||G.end)return;const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)*360/r.width,py=(e.clientY-r.top)*500/r.height,m=G.m;
+if(m=='mem'&&!G.lk){const c=Math.floor((px-24)/80),w=Math.floor((py-110)/84);if(c<0||c>3||w<0||w>2)return;const k=G.c[w*4+c];if(k.o||k.d)return;k.o=1;G.f.push(w*4+c);if(G.f.length==2){const[a,b]=G.f.map(j=>G.c[j]);if(a.v==b.v){a.d=b.d=1;G.sc+=20;G.f=[];say(lab(a.v),0);if(G.c.every(z=>z.d))G.end=1}else{say('Not a match',1,-1);G.lk=.8}}}
+if(m=='whack')G.h.forEach((v,i)=>{if(v&&Math.hypot(px-(60+i%3*120),py-(160+(i/3|0)*110))<48){G.h[i]=null;if(v.h)say('Oops, that was help: '+v.m,1,-1);else{G.sc+=10;say('Threat stopped: '+v.m,0)}}});
+if(m=='sort'&&G.cd&&py>380){const th=px<180;if(th!=G.cd.h){G.sc+=10;say((th?'Threat: ':'Helps: ')+G.cd.m,0)}else say('Wrong: '+G.cd.m+(G.cd.h?' helps':' is a threat'),1,-1);G.cd=null;if(G.sc>=150)G.end=1}
+if(G.pop<=0)G.end=2;paint()}
+const WD=[['EAGLE','National bird with a 2 m wingspan and a shaggy crest',2],['TAMARAW','Dwarf wild buffalo found only on Mindoro',3],['NARRA','The Philippines’ national tree',8],['MOLAVE','Dense timber tree also called mulawin',9],['TAWILIS','The only freshwater sardine, from Taal Lake',6],['TAKLOBO','Filipino name of the giant clam',7],['BUKAROT','Ilocano name for the Philippine crocodile',4],['SPONGE','Main food of the hawksbill sea turtle',5],['MINDORO','Island home of the tamaraw',3],['KALINGA','Province where the 709,000-year-old rhino fossil was found',1],['DODO','Flightless bird of Mauritius, last seen in 1662',0],['CORAL','Reef builder that hawksbills and giant clams depend on',5],['TAAL','Lake in Batangas where the tawilis lives',6],['PAWIKAN','Filipino word for sea turtle',5],['FOSSIL','What the Kalinga rhino evidence is made of',1]];
+let W,wg,wd;
+function wnew(){W=pk(WD);wg=[];wd=0;$('#wb').textContent='Guess';$('#wm').textContent='';wr()}
+function wr(){const n=W[0].length;$('#wc').innerHTML=`<b>Clue:</b> ${W[1]} (${n} letters)`;$('#wg').innerHTML=Array.from({length:6},(_,r)=>`<div class="wr">${Array.from({length:n},(_,c)=>{const g=wg[r];return `<span class="wt ${g?g[1][c]:''}">${g?g[0][c]:''}</span>`}).join('')}</div>`).join('')}
+function wsub(){if(wd)return wnew();const a=W[0],v=$('#wi').value.toUpperCase().replace(/[^A-Z]/g,'');if(v.length!=a.length){$('#wm').textContent='Type a '+a.length+'-letter word.';return}
+const r=Array(a.length).fill('x'),p=[...a];for(let k=0;k<a.length;k++)if(v[k]==a[k]){r[k]='g';p[k]=0}for(let k=0;k<a.length;k++)if(r[k]=='x'){const j=p.indexOf(v[k]);if(j>=0){r[k]='y';p[j]=0}}
+wg.push([v,r]);$('#wi').value='';wr();if(v==a||wg.length==6){wd=1;$('#wb').textContent='New word';$('#wm').innerHTML=(v==a?'You got it! ':'Out of tries. ')+`The word was <b>${a}</b>. <a href="#" onclick="open(${W[2]});return false">Read its profile</a>`}}
+$('#wb').onclick=wsub;$('#wi').onkeydown=e=>{if(e.key=='Enter')wsub()};wnew();
+draw();chp();paint();
+</script></body></html>
